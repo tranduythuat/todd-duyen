@@ -1,0 +1,1308 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "SVG-gotham";
+  src: url("../../assets/fonts/SVN-Gotham.woff2") format("woff2"), url("../../assets/fonts/SVN-Gotham.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVG-gotham-book";
+  src: url("../../assets/fonts/SVN-GothamBook.woff2") format("woff2"), url("../../assets/fonts/SVN-GothamBook.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVG-GothamLight";
+  src: url("../../assets/fonts/SVN-GothamLight.woff2") format("woff2"), url("../../assets/fonts/SVN-GothamLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVG-GothamBold";
+  src: url("../../assets/fonts/SVN-GothamBold.woff2") format("woff2"), url("../../assets/fonts/SVN-GothamBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../../assets/fonts/Lora-Regular.woff2") format("woff2"), url("../../assets/fonts/Lora-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AstonScriptBold-Bold";
+  src: url("../../assets/fonts/AstonScriptBold-Bold.woff2") format("woff2"), url("../../assets/fonts/AstonScriptBold-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TPLeMajor";
+  src: url("../../assets/fonts/TPLeMajor-Regular.woff2") format("woff2"), url("../../assets/fonts/TPLeMajor-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DFVNCatchyMager";
+  src: url("../../assets/fonts/DFVN Catchy Mager.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Allura";
+  src: url("../../assets/fonts/Allura-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aboreto-Regular";
+  src: url("../../assets/fonts/Aboreto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Hatton Bold";
+  src: url("../../assets/fonts/PP Hatton Bold 700.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Hatton Medium";
+  src: url("../../assets/fonts/PP Hatton Medium 500.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Hatton Ultralight";
+  src: url("../../assets/fonts/PP Hatton Ultralight 200.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+i {
+  font-family: "SVG-GothamLight", sans-serif;
+}
+
+img {
+  max-width: 542px;
+  width: 100%;
+  height: auto;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 542px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.281);
+  color: #686c73;
+  font-family: "Lora", sans-serif;
+  font-size: 11px;
+}
+
+/* music */
+.music-box {
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  right: 1%;
+  cursor: pointer;
+}
+.music-box .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-origin: right center;
+  position: absolute;
+  right: 30%;
+  max-width: 300px;
+  width: 190%;
+  height: 100%;
+  overflow: hidden;
+}
+.music-box .label .musicLabel {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  background-color: #efc8c8;
+  padding: 4% 15%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border: 1px solid rgba(48, 44, 42, 0.124);
+  opacity: 0.9;
+}
+.music-box .player {
+  max-width: 55px;
+  width: 105%;
+  aspect-ratio: 1;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player #iconSvg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 542px) {
+  .container {
+    font-size: 2.0295202952vw;
+  }
+  .music-box {
+    bottom: 1.8450184502vw;
+  }
+  .music-box .label {
+    max-width: 55.3505535055vw;
+  }
+  .music-box .label .musicLabel {
+    font-size: 2.2140221402vw;
+  }
+  .music-box .player {
+    max-width: 10.147601476vw;
+  }
+}
+.spin {
+  animation: spin 4s linear infinite;
+}
+
+/* Định nghĩa hoạt ảnh xoay */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.image-wrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+.image-wrapper img {
+  width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+[data-animate=flip], [data-animate=flip-yoyo] {
+  transform-origin: left center;
+  transform: rotateY(-120deg) scale(0.9);
+  opacity: 0;
+  filter: brightness(0.6);
+  backface-visibility: hidden;
+  transition: none;
+}
+
+[data-animate=flip].active, [data-animate=flip-yoyo].active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  top: 100px;
+  border-radius: 12px;
+}
+
+.red {
+  background: #e74c3c;
+}
+
+.blue {
+  background: #3498db;
+}
+
+.green {
+  background: #2ecc71;
+}
+
+.shake-text {
+  animation: shakeWithPause 3s ease-in-out infinite;
+}
+
+@keyframes shakeWithPause {
+  /* Rung lắc nhẹ - kéo dài hơn */
+  0%, 100% {
+    transform: translateX(0);
+  }
+  3% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  6% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  9% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  12% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  15% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  18% {
+    transform: translateX(3px) rotate(1deg);
+  }
+  21% {
+    transform: translateX(-2px) rotate(-0.5deg);
+  }
+  24% {
+    transform: translateX(2px) rotate(0.5deg);
+  }
+  27% {
+    transform: translateX(-2px) rotate(-0.5deg);
+  }
+  30% {
+    transform: translateX(2px) rotate(0.5deg);
+  }
+  33% {
+    transform: translateX(-1px) rotate(-0.3deg);
+  }
+  36% {
+    transform: translateX(1px) rotate(0.3deg);
+  }
+  39% {
+    transform: translateX(-1px) rotate(-0.3deg);
+  }
+  42% {
+    transform: translateX(0) rotate(0deg);
+  }
+  /* Nghỉ một đoạn */
+  42%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+.hero {
+  width: 100%;
+}
+.hero .content {
+  aspect-ratio: 542/817;
+  width: 100%;
+  background: url("../../assets/images/hero_bg.jpg") no-repeat center/cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.hero .content .letter-img {
+  margin: auto;
+}
+.hero .content .letter-img img {
+  max-width: 384px;
+}
+.hero .content .text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+}
+.hero .content .text-block .invitation {
+  font-size: 25px;
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  font-style: italic;
+  line-height: 1.2;
+}
+.hero .content .text-block .join-us {
+  font-size: 11.5px;
+  font-family: "SVG-gotham-book", sans-serif;
+}
+.hero .content .text-block .couple-name {
+  font-size: 28px;
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  margin-top: 8%;
+}
+@media (max-width: 542px) {
+  .hero .content .letter-img img {
+    max-width: 70.8487084871vw;
+  }
+  .hero .content .text-block .invitation {
+    font-size: 4.6125461255vw;
+  }
+  .hero .content .text-block .join-us {
+    font-size: 2.1217712177vw;
+  }
+  .hero .content .text-block .couple-name {
+    font-size: 5.1660516605vw;
+  }
+}
+
+.invite {
+  width: 100%;
+}
+.invite .content {
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/images/base_bg.png") repeat top/cover;
+  padding: 12% 0;
+}
+.invite .content .logo {
+  margin-bottom: 8%;
+}
+.invite .content .logo img {
+  max-width: 116px;
+}
+.invite .content .invite-text {
+  font-size: 14px;
+}
+.invite .content .invite-text .text-1 {
+  font-family: "SVG-gotham-book", sans-serif;
+  line-height: 2.2;
+}
+.invite .content .invite-text .text-2 {
+  font-family: "SVG-GothamLight", sans-serif;
+}
+.invite .content .couple-image {
+  margin: 8% 0;
+}
+.invite .content .couple-image img {
+  max-width: 210px;
+}
+.invite .content .names {
+  font-family: "AstonScriptBold-Bold", sans-serif;
+}
+.invite .content .names .name {
+  font-size: 29px;
+}
+.invite .content .names .and {
+  font-size: 16px;
+}
+.invite .content .divider {
+  margin: 15% 0;
+}
+.invite .content .divider img {
+  max-width: 42px;
+}
+.invite .content .venue .venue-label {
+  margin-bottom: 3%;
+}
+.invite .content .venue .venue-label,
+.invite .content .venue .date-time,
+.invite .content .venue .time-label {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "SVG-gotham-book", sans-serif;
+}
+.invite .content .venue .venue-name {
+  font-size: 25px;
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  line-height: 2;
+}
+.invite .content .venue .venue-address {
+  font-size: 14px;
+  font-family: "SVG-GothamLight", sans-serif;
+  font-style: italic;
+  margin-top: 2%;
+}
+.invite .content .venue .divider-diamond {
+  margin: 15% 0 3%;
+}
+.invite .content .venue .divider-diamond img {
+  max-width: 10px;
+}
+.invite .content .venue .date-time {
+  line-height: 2;
+  margin-bottom: 4%;
+}
+.invite .content .map-btn {
+  font-size: 17px;
+  font-family: "SVG-gotham-book", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #686c73;
+  max-width: 278px;
+  width: 100%;
+  aspect-ratio: 278/26;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+  margin: auto;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  line-height: 1;
+  padding-bottom: 0.5%;
+}
+.invite .content .map-btn:hover {
+  background-color: #686c73;
+}
+@media (max-width: 542px) {
+  .invite .content .logo img {
+    max-width: 21.4022140221vw;
+  }
+  .invite .content .invite-text {
+    font-size: 2.5830258303vw;
+  }
+  .invite .content .couple-image img {
+    max-width: 38.7453874539vw;
+  }
+  .invite .content .names .name {
+    font-size: 5.3505535055vw;
+  }
+  .invite .content .names .and {
+    font-size: 2.9520295203vw;
+  }
+  .invite .content .divider img {
+    max-width: 7.7490774908vw;
+  }
+  .invite .content .venue .venue-label,
+  .invite .content .venue .date-time,
+  .invite .content .venue .time-label {
+    font-size: 2.5830258303vw;
+  }
+  .invite .content .venue .venue-name {
+    font-size: 4.6125461255vw;
+  }
+  .invite .content .venue .venue-address {
+    font-size: 2.5830258303vw;
+  }
+  .invite .content .venue .divider-diamond img {
+    max-width: 1.8450184502vw;
+  }
+  .invite .content .map-btn {
+    font-size: 3.1365313653vw;
+    max-width: 51.2915129151vw;
+    border-radius: 3.3210332103vw;
+  }
+}
+
+.timeline {
+  width: 100%;
+}
+.timeline .content {
+  width: 100%;
+  aspect-ratio: 542/966;
+  background: url("../../assets/images/timeline_bg.jpg") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: "SVG-gotham-book", sans-serif;
+}
+.timeline .content .title {
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 8%;
+  margin-top: 5%;
+}
+.timeline .content .items .timeline-item {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.timeline .content .items .timeline-item .icon {
+  margin-bottom: 2%;
+}
+.timeline .content .items .timeline-item .icon img {
+  max-width: 35px;
+}
+@media (max-width: 542px) {
+  .timeline .content .title {
+    font-size: 4.6125461255vw;
+  }
+}
+
+.dresscode {
+  width: 100%;
+}
+.dresscode .content {
+  width: 100%;
+  background: url("../../assets/images/base_bg.png") no-repeat center/cover;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20%;
+}
+.dresscode .content .divider {
+  margin: 10% 0 5%;
+}
+.dresscode .content .divider img {
+  max-width: 54px;
+}
+.dresscode .content .title {
+  font-size: 30px;
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  margin-bottom: 5%;
+}
+.dresscode .content .subtext {
+  font-size: 13.7px;
+}
+.dresscode .content .subtext-1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PP Hatton Medium", sans-serif;
+  line-height: 2;
+  margin-bottom: 5%;
+}
+.dresscode .content .subtext-1 .no-white {
+  max-width: 16px;
+  margin-left: 1%;
+}
+.dresscode .content .subtext-2 {
+  font-family: "SVG-gotham-book", sans-serif;
+  margin-bottom: 18%;
+}
+.dresscode .content .couple-img img {
+  max-width: 402px;
+}
+@media (max-width: 542px) {
+  .dresscode .content .divider img {
+    max-width: 9.963099631vw;
+  }
+  .dresscode .content .title {
+    font-size: 5.5350553506vw;
+  }
+  .dresscode .content .subtext {
+    font-size: 2.5276752768vw;
+  }
+  .dresscode .content .subtext-1 .no-white {
+    max-width: 2.9520295203vw;
+  }
+  .dresscode .content .couple-img img {
+    max-width: 74.1697416974vw;
+  }
+}
+
+.guides {
+  width: 100%;
+}
+.guides .content {
+  width: 100%;
+}
+.guides .content .guide {
+  display: flex;
+  flex-direction: column;
+}
+.guides .content .guide .divider-area {
+  width: 100%;
+  aspect-ratio: 542/118;
+  background-color: #eaebe7;
+}
+.guides .content .guide .description {
+  width: 100%;
+  background: url("../../assets/images/base_bg.png") no-repeat center/cover;
+  text-align: center;
+  padding: 0 6%;
+}
+.guides .content .guide .description .title {
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  font-size: 23px;
+  margin: 10% 0 8%;
+}
+.guides .content .guide .description .subtext {
+  font-family: "SVG-gotham-book", sans-serif;
+  font-size: 13.75px;
+  text-align: justify;
+  text-align-last: center;
+}
+.guides .content .guide .description .subtext p {
+  margin-bottom: 3%;
+}
+.guides .content .guide .description .btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #686c73;
+  font-family: "SVG-gotham-book", sans-serif;
+  border: 1px solid #686c73;
+  padding: 0.5% 2% 0.9%;
+  border-radius: 5px;
+  font-size: 12.3px;
+}
+.guides .content .guide.first .divider-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.guides .content .guide.first .divider-area .icon img {
+  max-width: 48px;
+}
+.guides .content .guide.first .description {
+  aspect-ratio: 542/450;
+}
+.guides .content .guide.first .description .btn {
+  margin-top: 2%;
+}
+.guides .content .guide.second .divider-area {
+  position: relative;
+}
+.guides .content .guide.second .divider-area img.couple {
+  position: absolute;
+  max-width: 154px;
+  top: -75%;
+  left: 5%;
+}
+.guides .content .guide.second .divider-area img.icon-01 {
+  max-width: 43px;
+  position: absolute;
+  top: 50%;
+  left: 9%;
+}
+.guides .content .guide.second .divider-area img.icon-02 {
+  max-width: 102px;
+  position: absolute;
+  top: 21%;
+  left: 27%;
+}
+.guides .content .guide.second .description {
+  aspect-ratio: 542/486;
+}
+.guides .content .guide.second .description .title {
+  margin: 12% 0 10%;
+}
+.guides .content .guide.second .description .btn {
+  margin-top: 2%;
+}
+.guides .content .guide.third .divider-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.guides .content .guide.third .divider-area .icon img {
+  max-width: 50px;
+}
+.guides .content .guide.third .description {
+  aspect-ratio: 542/667;
+}
+.guides .content .guide.third .description .title {
+  margin: 12% 0 10%;
+}
+.guides .content .guide.third .description .btn {
+  display: block;
+}
+.guides .content .guide.third .description .btn.option-1 {
+  margin: 15% 0 6%;
+}
+.guides .content .guide.third .description .btn.option-2 {
+  margin-bottom: 15%;
+}
+.guides .content .guide.third .description .btn.option-2 span {
+  font-style: italic;
+}
+@media (max-width: 542px) {
+  .guides .content .guide .description .title {
+    font-size: 4.2435424354vw;
+  }
+  .guides .content .guide .description .subtext {
+    font-size: 2.536900369vw;
+  }
+  .guides .content .guide .description .btn {
+    border-radius: 0.9225092251vw;
+    font-size: 2.2693726937vw;
+  }
+  .guides .content .guide.first .divider-area .icon img {
+    max-width: 8.8560885609vw;
+  }
+  .guides .content .guide.second .divider-area img.couple {
+    max-width: 28.4132841328vw;
+  }
+  .guides .content .guide.second .divider-area img.icon-01 {
+    max-width: 7.9335793358vw;
+  }
+  .guides .content .guide.second .divider-area img.icon-02 {
+    max-width: 18.8191881919vw;
+  }
+  .guides .content .guide.third .divider-area .icon img {
+    max-width: 9.2250922509vw;
+  }
+}
+
+.contact {
+  width: 100%;
+}
+.contact .content {
+  width: 100%;
+  aspect-ratio: 542/330;
+  background: url("../../assets/images/contact_bg.jpg") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "SVG-gotham-book", sans-serif;
+}
+.contact .content .title {
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  font-size: 22.6px;
+  margin-bottom: 1%;
+}
+.contact .content .subtext {
+  font-size: 13.75px;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.contact .content .subtext span {
+  font-family: "SVG-GothamBold", sans-serif;
+}
+.contact .content .note {
+  font-size: 13.75px;
+  font-style: italic;
+}
+@media (max-width: 542px) {
+  .contact .content .title {
+    font-size: 4.1697416974vw;
+  }
+  .contact .content .subtext,
+  .contact .content .note {
+    font-size: 2.536900369vw;
+  }
+}
+
+.video {
+  width: 100%;
+}
+.video .content {
+  width: 100%;
+  aspect-ratio: 542/1120;
+  background: url("../../assets/images/base_bg.png") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "SVG-gotham-book", sans-serif;
+}
+.video .content .title {
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  font-size: 36px;
+  margin-bottom: 1%;
+  text-align: center;
+  line-height: 1.5;
+  transform: rotate(-7deg);
+}
+.video .content .divider {
+  margin: 10% 0 12%;
+}
+.video .content .divider img {
+  max-width: 46px;
+}
+.video .content .video-oj img {
+  max-width: 424px;
+}
+@media (max-width: 542px) {
+  .video .content .title {
+    font-size: 6.6420664207vw;
+  }
+  .video .content .divider img {
+    max-width: 8.4870848708vw;
+  }
+  .video .content .video-oj img {
+    max-width: 78.2287822878vw;
+  }
+}
+
+.album {
+  width: 100%;
+}
+.album .content {
+  width: 100%;
+}
+.album .content h2 {
+  color: #646531;
+  font-size: 41px;
+  font-weight: 300;
+  margin: 5% 0 7%;
+}
+.album .content .swiper {
+  width: 100%;
+  aspect-ratio: 542/754;
+  margin: 0 auto;
+}
+.album .content .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.album .content .swiper .swiper-button-next,
+.album .content .swiper .swiper-button-prev {
+  color: white;
+}
+.album .content .swiper .swiper-pagination-bullet-active {
+  background: rgb(215, 215, 215);
+}
+.album .content .swiper .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+@media (max-width: 542px) {
+  .album .content h2 {
+    font-size: 7.5645756458vw;
+  }
+  .album .content .swiper .swiper-button-next:after,
+  .album .content .swiper .swiper-button-prev:after {
+    font-size: 8.1180811808vw;
+  }
+  .album .content .swiper .swiper-pagination-bullet {
+    width: 2.9520295203vw;
+    height: 2.9520295203vw;
+  }
+}
+
+.swiper {
+  margin: 0 auto;
+}
+
+.qrcode {
+  width: 100%;
+}
+.qrcode .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.qrcode .content .label {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+  font-family: "DFVNCatchyMager", sans-serif;
+}
+.qrcode .content .title {
+  font-size: 32px;
+  font-family: "TPLeMajor", sans-serif;
+  line-height: 0.8;
+  margin: 5% 0 10%;
+}
+.qrcode .content .title i {
+  font-size: 22px;
+  text-transform: unset;
+}
+.qrcode .content .subtitle {
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "SVG-gotham", sans-serif;
+  margin-bottom: 5%;
+}
+.qrcode .content .subtitle i {
+  font-family: "SVG-GothamLight", sans-serif;
+  text-transform: unset;
+}
+.qrcode .content .qr-code {
+  background-color: #e7dcd3;
+  padding: 7%;
+  border-radius: 10px;
+  max-width: 320px;
+  width: 100%;
+}
+.qrcode .content .qr-code.first {
+  margin-bottom: 5%;
+}
+.qrcode .content .qr-code .name {
+  font-size: 22px;
+  font-family: "DFVNCatchyMager", sans-serif;
+  margin-bottom: 3%;
+}
+.qrcode .content .qr-code img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  padding: 8%;
+  background-color: white;
+  border-radius: 15px;
+}
+.qrcode .content .qr-code .label1 {
+  font-size: 22px;
+  font-family: "DFVNCatchyMager", sans-serif;
+  margin-top: 3%;
+}
+.qrcode .content .qr-code .label2 {
+  font-size: 16px;
+  font-family: "SVG-GothamLight", sans-serif;
+  color: rgb(138, 128, 128);
+}
+@media (max-width: 542px) {
+  .qrcode .content h2 {
+    font-size: 2.9520295203vw;
+  }
+  .qrcode .content .label {
+    font-size: 2.9520295203vw;
+  }
+  .qrcode .content .title {
+    font-size: 5.9040590406vw;
+  }
+  .qrcode .content .title i {
+    font-size: 4.0590405904vw;
+  }
+  .qrcode .content .subtitle {
+    font-size: 2.2140221402vw;
+  }
+  .qrcode .content .qr-code {
+    max-width: 59.0405904059vw;
+    border-radius: 1.8450184502vw;
+  }
+  .qrcode .content .qr-code .name {
+    font-size: 4.0590405904vw;
+  }
+  .qrcode .content .qr-code img {
+    max-width: 36.9003690037vw;
+    border-radius: 2.7675276753vw;
+  }
+  .qrcode .content .qr-code .label1 {
+    font-size: 4.0590405904vw;
+  }
+  .qrcode .content .qr-code .label2 {
+    font-size: 2.9520295203vw;
+  }
+}
+
+.rsvp {
+  width: 100%;
+}
+.rsvp .content {
+  aspect-ratio: 542/1663;
+  background: url("../../assets/images/base_bg.png") repeat top/contain, url("../../assets/images/end_bg.png") no-repeat bottom/contain;
+  width: 100%;
+  perspective: 1000px;
+  position: relative;
+  padding: 12% 8% 0%;
+}
+.rsvp .content .header {
+  padding: 5% 0;
+}
+.rsvp .content .header .divider {
+  margin-bottom: 5%;
+}
+.rsvp .content .header .divider img {
+  max-width: 42px;
+}
+.rsvp .content .header .title {
+  font-size: 30px;
+  font-family: "AstonScriptBold-Bold", sans-serif;
+  line-height: 0.8;
+  margin-bottom: 5%;
+}
+.rsvp .content .header i.title-vi {
+  display: block;
+  text-transform: unset;
+  font-family: "SVG-GothamLight", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 3%;
+}
+.rsvp .content .header .subtext {
+  font-size: 14.5px;
+  margin-bottom: 5%;
+  text-align: justify;
+  text-align-last: center;
+  font-family: "SVG-gotham-book", sans-serif;
+}
+.rsvp .content .header .subtext-vi {
+  display: block;
+  font-size: "SVG-GothamLight", sans-serif;
+  text-align: justify;
+  text-align-last: center;
+}
+.rsvp .content .header hr {
+  margin: 5% 0 7%;
+}
+.rsvp .content .divider {
+  margin: 3% 0 8%;
+}
+.rsvp .content .divider img {
+  max-width: 9px;
+}
+.rsvp .content .rsvp-form {
+  display: block;
+}
+.rsvp .content .rsvp-form .divider {
+  margin: 11% 0;
+}
+.rsvp .content .rsvp-form .button-group {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 12%;
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper {
+  position: relative;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.rsvp .content .rsvp-form .button-group .radio-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 0;
+  height: 100%;
+  line-height: 1.2;
+  border-radius: 18px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: solid 2px #686c73;
+  font-family: "SVG-gotham-book", sans-serif;
+  color: #8c8c8c;
+  font-size: 10.8px;
+}
+.rsvp .content .rsvp-form .button-group .radio-label span {
+  font-family: "SVG-GothamLight", sans-serif;
+  font-style: italic;
+}
+.rsvp .content .rsvp-form .button-group .radio-label:hover {
+  background: #686c73;
+  color: white;
+}
+.rsvp .content .rsvp-form .button-group .radio-wrapper input[type=radio]:checked + .radio-label {
+  background: #686c73;
+  color: white;
+}
+.rsvp .content .rsvp-form .form-group {
+  margin-bottom: 3%;
+  position: relative;
+  font-size: 10px;
+}
+.rsvp .content .rsvp-form .form-group input[type=text],
+.rsvp .content .rsvp-form .form-group input[type=number],
+.rsvp .content .rsvp-form .form-group textarea {
+  font-family: inherit;
+  width: 100%;
+  padding: 2% 4%;
+  border-radius: 14px;
+  background: transparent;
+  outline: none;
+  border: solid 2px #686c73;
+  line-height: 1;
+  transition: border-color 0.3s ease;
+  color: #686c73;
+  background-color: transparent;
+  font-size: 12px;
+  font-family: "SVG-GothamLight", sans-serif;
+}
+.rsvp .content .rsvp-form .form-group input[type=text]:focus,
+.rsvp .content .rsvp-form .form-group input[type=number]:focus,
+.rsvp .content .rsvp-form .form-group textarea:focus {
+  outline: none;
+}
+.rsvp .content .rsvp-form .form-group input[type=text]::placeholder,
+.rsvp .content .rsvp-form .form-group textarea::placeholder {
+  color: #8c8c8c;
+}
+.rsvp .content .rsvp-form .form-group textarea#message {
+  aspect-ratio: 8/2;
+  resize: vertical;
+  padding: 2% 4%;
+  border-radius: 15px;
+}
+.rsvp .content .rsvp-form .form-group textarea#guest-names {
+  aspect-ratio: 9/1;
+  resize: vertical;
+  padding: 2% 4%;
+  border-radius: 15px;
+}
+.rsvp .content .rsvp-form .form-group textarea::placeholder {
+  white-space: pre-line;
+  /* Cho phép hiển thị xuống dòng trong placeholder */
+}
+.rsvp .content .rsvp-form .form-group .subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 3%;
+  font-family: "SVG-gotham-book", sans-serif;
+}
+.rsvp .content .rsvp-form .form-group i.subtitle-vi {
+  display: block;
+  font-size: 9.2px;
+  margin-bottom: 4%;
+}
+.rsvp .content .rsvp-form .form-group .flower1 {
+  max-width: 82px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  right: -5%;
+  bottom: 0;
+}
+.rsvp .content .rsvp-form .form-group.confirm {
+  margin-bottom: 8%;
+}
+.rsvp .content .rsvp-form .form-group.confirm .button-group {
+  display: block;
+  grid-template-columns: auto;
+}
+.rsvp .content .rsvp-form .form-group.confirm .button-group .radio-label {
+  display: inline-block;
+  padding: 2% 5%;
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .form-group.confirm .button-group .radio-label:hover {
+  background: #686c73;
+  color: white;
+}
+.rsvp .content .rsvp-form .form-group.name textarea, .rsvp .content .rsvp-form .form-group.guest-info textarea {
+  aspect-ratio: 9/1;
+}
+.rsvp .content .rsvp-form .form-group.guest-number {
+  display: flex;
+  gap: 2%;
+}
+.rsvp .content .rsvp-form .form-group.guest-number .label {
+  font-family: "SVG-gotham", sans-serif;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  text-transform: uppercase;
+}
+.rsvp .content .rsvp-form .form-group.guest-number input {
+  width: 63%;
+}
+.rsvp .content .rsvp-form .submit-btn {
+  width: 40%;
+  padding: 3% 2% 2%;
+  line-height: 1;
+  background: #686c73;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 10.8px;
+  font-family: "SVG-GothamLight", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  margin: 1% 0 6%;
+  margin-top: 11%;
+}
+.rsvp .content .rsvp-form .submit-btn span {
+  font-style: italic;
+  font-size: 9.2px;
+}
+.rsvp .content .rsvp-form .submit-btn:hover {
+  background: rgb(41, 51, 36);
+  opacity: 0.9;
+}
+.rsvp .content .rsvp-form .submit-btn:active {
+  transform: scale(0.98);
+}
+@media (max-width: 542px) {
+  .rsvp .content .header .divider img {
+    max-width: 7.7490774908vw;
+  }
+  .rsvp .content .header .title {
+    font-size: 5.5350553506vw;
+  }
+  .rsvp .content .header i.title-vi {
+    font-size: 2.5830258303vw;
+  }
+  .rsvp .content .header .subtext {
+    font-size: 2.6752767528vw;
+  }
+  .rsvp .content .rsvp-form .button-group .radio-label {
+    border-radius: 3.3210332103vw;
+    font-size: 1.9926199262vw;
+  }
+  .rsvp .content .rsvp-form .form-group {
+    font-size: 1.8450184502vw;
+  }
+  .rsvp .content .rsvp-form .form-group input[type=text],
+  .rsvp .content .rsvp-form .form-group input[type=number],
+  .rsvp .content .rsvp-form .form-group textarea {
+    border-radius: 2.5830258303vw;
+    font-size: 2.2140221402vw;
+  }
+  .rsvp .content .rsvp-form .form-group textarea#message {
+    border-radius: 2.7675276753vw;
+  }
+  .rsvp .content .rsvp-form .form-group textarea#guest-names {
+    border-radius: 2.7675276753vw;
+  }
+  .rsvp .content .rsvp-form .form-group .subtitle {
+    font-size: 2.5830258303vw;
+  }
+  .rsvp .content .rsvp-form .form-group i.subtitle-vi {
+    font-size: 1.6974169742vw;
+  }
+  .rsvp .content .rsvp-form .form-group .flower1 {
+    max-width: 15.1291512915vw;
+  }
+  .rsvp .content .rsvp-form .submit-btn {
+    font-size: 1.9926199262vw;
+    border-radius: 2.5830258303vw;
+  }
+}
+
+.end {
+  width: 100%;
+}
+.end .content {
+  aspect-ratio: 542/163;
+  width: 100%;
+  position: relative;
+}
+@media (max-width: 542px) {
+  .end .content .text-block {
+    font-size: 2.3985239852vw;
+  }
+}
+
+.yenstudio .content {
+  padding: 15% 0 5%;
+  width: 100%;
+}
+.yenstudio .content img {
+  max-width: 108px;
+  width: 100%;
+}
+.yenstudio .content .text {
+  margin-top: 1%;
+  font-size: 14px;
+  font-family: "SVG-gotham", sans-serif;
+}
+@media (max-width: 542px) {
+  .yenstudio .content img {
+    max-width: 19.926199262vw;
+  }
+  .yenstudio .content .text {
+    font-size: 2.5830258303vw;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,48 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.contact {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        aspect-ratio: 542 / 330;
+        background: url('../../assets/images/contact_bg.jpg') no-repeat center / cover;
+        @include flex-center;
+        flex-direction: column;
+        font-family: $font-SVG-gothamBook;
+
+        .title {
+            font-family: $font-AstonScriptBold;
+            font-size: 22.6px;
+            margin-bottom: 1%;
+        }
+
+        .subtext {
+            font-size: 13.75px;
+            text-align: center;
+            margin-bottom: 2%;
+
+
+            span {
+                font-family: $font-SVG-GothamBold;
+            }
+        }
+
+        .note {
+            font-size: 13.75px;
+            font-style: italic;
+        }
+
+        @media (max-width: 542px) {
+            .title {
+                font-size: calc((22.6 / 542) * 100vw);
+            }
+
+            .subtext,
+            .note {
+                font-size: calc((13.75 / 542) * 100vw);
+            }
+        }
+    }
+}

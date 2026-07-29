@@ -1,0 +1,207 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.guides {
+    width: 100%;
+
+    .content {
+        width: 100%;
+
+        .guide {
+            display: flex;
+            flex-direction: column;
+
+            .divider-area {
+                width: 100%;
+                aspect-ratio: 542 / 118;
+                background-color: #eaebe7ff;
+            }
+
+            .description {
+                width: 100%;
+                background: url('../../assets/images/base_bg.png') no-repeat center / cover;
+                text-align: center;
+                padding: 0 6%;
+
+                .title {
+                    font-family: $font-AstonScriptBold;
+                    font-size: 23px;
+                    margin: 10% 0 8%;
+                }
+
+                .subtext {
+                    font-family: $font-SVG-gothamBook;
+                    font-size: 13.75px;
+                    text-align: justify;
+                    text-align-last: center;
+
+                    p {
+                        margin-bottom: 3%;
+                    }
+                }
+
+                .btn {
+                    display: inline-block;
+                    text-decoration: none;
+                    color: $text-color;
+                    font-family: $font-SVG-gothamBook;
+                    border: 1px solid $text-color;
+                    padding: .5% 2% .9%;
+                    border-radius: 5px;
+                    font-size: 12.3px
+                }
+            }
+
+            &.first {
+                .divider-area {
+                    @include flex-center;
+
+                    .icon {
+                        img {
+                            max-width: 48px;
+                        }
+                    }
+                }
+
+                .description {
+                    aspect-ratio: 542 / 450;
+
+                    .btn {
+                        margin-top: 2%;
+                    }
+                }
+            }
+
+            &.second {
+                .divider-area {
+                    position: relative;
+
+                    img.couple {
+                        position: absolute;
+                        max-width: 154px;
+                        top: -75%;
+                        left: 5%;
+                    }
+
+                    img.icon-01 {
+                        max-width: 43px;
+                        position: absolute;
+                        top: 50%;
+                        left: 9%;
+
+                    }
+
+                    img.icon-02 {
+                        max-width: 102px;
+                        position: absolute;
+                        top: 21%;
+                        left: 27%;
+                    }
+                }
+
+                .description {
+                    aspect-ratio: 542 / 486;
+
+                    .title {
+                        margin: 12% 0 10%;
+                    }
+
+                    .btn {
+                        margin-top: 2%;
+                    }
+                }
+            }
+
+            &.third {
+                .divider-area {
+                    @include flex-center;
+
+                    .icon {
+                        img {
+                            max-width: 50px;
+                        }
+                    }
+                }
+
+                .description {
+                    aspect-ratio: 542 / 667;
+
+                    .title {
+                        margin: 12% 0 10%;
+                    }
+
+                    .btn {
+                        display: block;
+
+                        &.option-1 {
+                            margin: 15% 0 6%;
+                        }
+
+                        &.option-2 {
+                            margin-bottom: 15%;
+
+                            span {
+                                font-style: italic;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 542px) {
+            .guide {
+                .description {
+                    .title {
+                        font-size: calc((23 / 542) * 100vw);
+                    }
+
+                    .subtext {
+                        font-size: calc((13.75 / 542) * 100vw);
+                    }
+
+                    .btn {
+                        border-radius: calc((5 / 542) * 100vw);
+                        font-size: calc((12.3 / 542) * 100vw);
+                    }
+                }
+
+                &.first {
+                    .divider-area {
+                        .icon {
+                            img {
+                                max-width: calc((48 / 542) * 100vw);
+                            }
+                        }
+                    }
+                }
+
+                &.second {
+                    .divider-area {
+                        img.couple {
+                            max-width: calc((154 / 542) * 100vw);
+                        }
+
+                        img.icon-01 {
+                            max-width: calc((43 / 542) * 100vw);
+                        }
+
+                        img.icon-02 {
+                            max-width: calc((102 / 542) * 100vw);
+                        }
+                    }
+                }
+
+                &.third {
+                    .divider-area {
+                        .icon {
+                            img {
+                                max-width: calc((50 / 542) * 100vw);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

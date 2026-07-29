@@ -1,0 +1,351 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.rsvp {
+    width: 100%;
+
+    .content {
+        aspect-ratio: 542 / 1663;
+        background: url('../../assets/images/base_bg.png') repeat top / contain,
+            url('../../assets/images/end_bg.png') no-repeat bottom / contain;
+        width: 100%;
+        perspective: 1000px;
+        position: relative;
+        padding: 12% 8% 0%;
+
+        .header {
+            padding: 5% 0;
+
+            .divider {
+                margin-bottom: 5%;
+
+                img {
+                    max-width: 42px;
+                }
+            }
+
+            .title {
+                font-size: 30px;
+                font-family: $font-AstonScriptBold;
+                line-height: .8;
+                margin-bottom: 5%;
+
+            }
+
+            i.title-vi {
+                display: block;
+                text-transform: unset;
+                font-family: $font-SVG-GothamLight;
+                font-size: 14px;
+                line-height: 2;
+                margin-bottom: 3%;
+            }
+
+            .subtext {
+                font-size: 14.5px;
+                margin-bottom: 5%;
+                text-align: justify;
+                text-align-last: center;
+                font-family: $font-SVG-gothamBook;
+            }
+
+            .subtext-vi {
+                display: block;
+                font-size: $font-SVG-GothamLight;
+                text-align: justify;
+                text-align-last: center;
+            }
+
+            hr {
+                margin: 5% 0 7%;
+            }
+        }
+
+        .divider {
+            margin: 3% 0 8%;
+
+            img {
+                max-width: 9px;
+            }
+        }
+
+        .rsvp-form {
+            display: block;
+
+            .divider {
+                margin: 11% 0;
+            }
+
+            .button-group {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 12%;
+                margin-bottom: 2%;
+
+                .radio-wrapper {
+                    position: relative;
+                }
+
+                .radio-wrapper input[type="radio"] {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                .radio-label {
+                    @include flex-center;
+                    padding: 4% 0;
+                    height: 100%;
+                    line-height: 1.2;
+                    border-radius: 18px;
+                    background: transparent;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-align: center;
+                    border: solid 2px $text-color;
+                    font-family: $font-SVG-gothamBook;
+                    color: #8c8c8cff;
+                    font-size: 10.8px;
+
+                    span {
+                        font-family: $font-SVG-GothamLight;
+                        font-style: italic;
+                    }
+
+                    &:hover {
+                        background: $text-color;
+                        color: white;
+                    }
+                }
+
+                .radio-wrapper input[type="radio"]:checked+.radio-label {
+                    background: $text-color;
+                    color: white;
+                }
+            }
+
+            .form-group {
+                margin-bottom: 3%;
+                position: relative;
+                font-size: 10px;
+
+                input[type="text"],
+                input[type="number"],
+                textarea {
+                    font-family: inherit;
+                    width: 100%;
+                    padding: 2% 4%;
+                    border-radius: 14px;
+                    background: transparent;
+                    outline: none;
+                    border: solid 2px $text-color;
+                    line-height: 1;
+                    transition: border-color 0.3s ease;
+                    color: $text-color;
+                    background-color: transparent;
+                    font-size: 12px;
+                    font-family: $font-SVG-GothamLight;
+                }
+
+                input[type="text"]:focus,
+                input[type="number"]:focus,
+                textarea:focus {
+                    outline: none;
+                }
+
+                input[type="text"]::placeholder,
+                textarea::placeholder {
+                    color: #8c8c8cff;
+                }
+
+                textarea#message {
+                    aspect-ratio: 8 / 2;
+                    resize: vertical;
+                    padding: 2% 4%;
+                    border-radius: 15px;
+                }
+
+                textarea#guest-names {
+                    aspect-ratio: 9 / 1;
+                    resize: vertical;
+                    padding: 2% 4%;
+                    border-radius: 15px;
+                }
+
+
+                textarea::placeholder {
+                    white-space: pre-line;
+                    /* Cho phép hiển thị xuống dòng trong placeholder */
+                }
+
+                .subtitle {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    margin-bottom: 3%;
+                    font-family: $font-SVG-gothamBook;
+                }
+
+                i.subtitle-vi {
+                    display: block;
+                    font-size: 9.2px;
+                    margin-bottom: 4%;
+                }
+
+                .flower1 {
+                    max-width: 82px;
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    right: -5%;
+                    bottom: 0;
+                }
+
+                &.confirm {
+                    margin-bottom: 8%;
+
+                    .button-group {
+                        display: block;
+                        grid-template-columns: auto;
+
+                        .radio-label {
+                            display: inline-block;
+                            padding: 2% 5%;
+                            margin-bottom: 2%;
+
+                            &:hover {
+                                background: $text-color;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                &.name,
+                &.guest-info {
+                    textarea {
+                        aspect-ratio: 9 / 1;
+                    }
+                }
+
+                &.guest-number {
+                    display: flex;
+                    gap: 2%;
+
+                    .label {
+                        font-family: $font-SVG-gotham;
+                        display: flex;
+                        flex-direction: column;
+                        @include flex-center;
+                        width: 35%;
+                        text-transform: uppercase;
+                    }
+
+                    input {
+                        width: 63%;
+                    }
+                }
+            }
+
+            .submit-btn {
+                width: 40%;
+                padding: 3% 2% 2%;
+                line-height: 1;
+                background: $text-color;
+                color: white;
+                border: none;
+                border-radius: 14px;
+                font-weight: 600;
+                font-size: 10.8px;
+                font-family: $font-SVG-GothamLight;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: background 0.3s ease;
+                margin: 1% 0 6%;
+                margin-top: 11%;
+
+                span {
+                    font-style: italic;
+                    font-size: 9.2px;
+                }
+            }
+
+            .submit-btn:hover {
+                background: rgb(41, 51, 36);
+                opacity: 0.9;
+            }
+
+            .submit-btn:active {
+                transform: scale(0.98);
+            }
+        }
+
+        @media (max-width: 542px) {
+            .header {
+                .divider {
+                    img {
+                        max-width: calc((42 / 542) * 100vw);
+                    }
+                }
+
+                .title {
+                    font-size: calc((30 / 542) * 100vw);
+
+                }
+
+                i.title-vi {
+                    font-size: calc((14 / 542) * 100vw);
+                }
+
+                .subtext {
+                    font-size: calc((14.5 / 542) * 100vw);
+                }
+            }
+
+            .rsvp-form {
+                .button-group {
+                    .radio-label {
+                        border-radius: calc((18 / 542) * 100vw);
+                        font-size: calc((10.8 / 542) * 100vw);
+                    }
+                }
+
+                .form-group {
+                    font-size: calc((10 / 542) * 100vw);
+
+                    input[type="text"],
+                    input[type="number"],
+                    textarea {
+                        border-radius: calc((14 / 542) * 100vw);
+                        font-size: calc((12 / 542) * 100vw);
+                    }
+
+                    textarea#message {
+                        border-radius: calc((15 / 542) * 100vw);
+                    }
+
+                    textarea#guest-names {
+                        border-radius: calc((15 / 542) * 100vw);
+                    }
+
+                    .subtitle {
+                        font-size: calc((14 / 542) * 100vw);
+                    }
+
+                    i.subtitle-vi {
+                        font-size: calc((9.2 / 542) * 100vw);
+                    }
+
+                    .flower1 {
+                        max-width: calc((82 / 542) * 100vw);
+                    }
+                }
+
+                .submit-btn {
+                    font-size: calc((10.8 / 542) * 100vw);
+                    border-radius: calc((14 / 542) * 100vw)
+                }
+            }
+        }
+    }
+
+}

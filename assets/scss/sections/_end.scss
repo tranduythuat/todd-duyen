@@ -1,0 +1,47 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.end {
+    width: 100%;
+
+    .content {
+        aspect-ratio: 542 / 163;
+        width: 100%;
+        position: relative;
+
+
+        @media (max-width: 542px) {
+            .text-block {
+                font-size: calc((13 / 542) * 100vw);
+            }
+        }
+    }
+}
+
+.yenstudio {
+    .content {
+        padding: 15% 0 5%;
+        width: 100%;
+
+        img {
+            max-width: 108px;
+            width: 100%;
+        }
+
+        .text {
+            margin-top: 1%;
+            font-size: 14px;
+            font-family: $font-SVG-gotham;
+        }
+
+        @media (max-width: 542px) {
+            img {
+                max-width: calc((108 / 542) * 100vw);
+            }
+
+            .text {
+                font-size: calc((14 / 542) * 100vw);
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+    width: 100%;
+
+    .content {
+        aspect-ratio: 542 / 817;
+        width: 100%;
+        background: url('../../assets/images/hero_bg.jpg') no-repeat center / cover;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+        .letter-img {
+            margin: auto;
+
+            img {
+                max-width: 384px;
+            }
+        }
+
+        .text-block {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -85%);
+
+            .invitation {
+                font-size: 25px;
+                font-family: $font-AstonScriptBold;
+                font-style: italic;
+                line-height: 1.2;
+            }
+
+            .join-us {
+                font-size: 11.5px;
+                font-family: $font-SVG-gothamBook;
+            }
+
+            .couple-name {
+                font-size: 28px;
+                font-family: $font-AstonScriptBold;
+                margin-top: 8%;
+            }
+        }
+
+
+        @media (max-width: 542px) {
+            .letter-img {
+                img {
+                    max-width: calc((384 / 542) * 100vw);
+                }
+            }
+
+            .text-block {
+                .invitation {
+                    font-size: calc((25 / 542) * 100vw);
+                }
+
+                .join-us {
+                    font-size: calc((11.5 / 542) * 100vw);
+                }
+
+                .couple-name {
+                    font-size: calc((28 / 542) * 100vw);
+                }
+            }
+
+        }
+    }
+}

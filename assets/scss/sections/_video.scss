@@ -1,0 +1,56 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.video {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        aspect-ratio: 542 / 1120;
+        background: url('../../assets/images/base_bg.png') no-repeat center / cover;
+        @include flex-center;
+        flex-direction: column;
+        font-family: $font-SVG-gothamBook;
+
+        .title {
+            font-family: $font-AstonScriptBold;
+            font-size: 36px;
+            margin-bottom: 1%;
+            text-align: center;
+            line-height: 1.5;
+            transform: rotate(-7deg);
+        }
+
+        .divider {
+            margin: 10% 0 12%;
+
+            img {
+                max-width: 46px;
+            }
+        }
+
+        .video-oj {
+            img {
+                max-width: 424px;
+            }
+        }
+
+        @media (max-width: 542px) {
+            .title {
+                font-size: calc((36 / 542) * 100vw);
+            }
+
+            .divider {
+                img {
+                    max-width: calc((46 / 542) * 100vw);
+                }
+            }
+
+            .video-oj {
+                img {
+                    max-width: calc((424 / 542) * 100vw);
+                }
+            }
+        }
+    }
+}
