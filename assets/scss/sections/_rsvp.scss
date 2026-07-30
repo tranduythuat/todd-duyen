@@ -155,7 +155,8 @@
 
                 input[type="text"]::placeholder,
                 textarea::placeholder {
-                    color: #8c8c8cff;
+                    color: rgb(78, 78, 78);
+                    font-weight: 600;
                 }
 
                 textarea#message {
@@ -183,6 +184,7 @@
                     text-transform: uppercase;
                     margin-bottom: 3%;
                     font-family: $font-SVG-gothamBook;
+                    font-weight: 600;
                 }
 
                 i.subtitle-vi {

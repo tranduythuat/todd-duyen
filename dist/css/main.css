@@ -1121,7 +1121,8 @@ section {
 }
 .rsvp .content .rsvp-form .form-group input[type=text]::placeholder,
 .rsvp .content .rsvp-form .form-group textarea::placeholder {
-  color: #8c8c8c;
+  color: rgb(78, 78, 78);
+  font-weight: 600;
 }
 .rsvp .content .rsvp-form .form-group textarea#message {
   aspect-ratio: 8/2;
@@ -1144,6 +1145,7 @@ section {
   text-transform: uppercase;
   margin-bottom: 3%;
   font-family: "SVG-gotham-book", sans-serif;
+  font-weight: 600;
 }
 .rsvp .content .rsvp-form .form-group i.subtitle-vi {
   display: block;
