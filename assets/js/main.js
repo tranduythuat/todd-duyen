@@ -353,6 +353,7 @@
     items.forEach((item, index) => {
       const icon = item.querySelector(".icon-animate");
       const time = item.querySelector(".time");
+      const label = item.querySelector(".label");
       const overlap = index === 0 ? 0 : 0.2 + index * 0.1;
 
       // Item fade
@@ -392,7 +393,21 @@
             duration: 1,
             ease: "power2.out"
           },
-          "<0.4"
+          "<0.2"
+        );
+      }
+
+      // Time fade
+      if (label) {
+        tl.from(
+          label,
+          {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            ease: "power2.out"
+          },
+          "<0.2"
         );
       }
     });
