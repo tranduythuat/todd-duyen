@@ -998,7 +998,7 @@ section {
 }
 .rsvp .content {
   aspect-ratio: 542/1663;
-  background: url("../../assets/images/base_bg.png") repeat top/contain, url("../../assets/images/end_bg.png") no-repeat bottom/contain;
+  background: url("../../assets/images/end_bg.png") no-repeat bottom/contain, url("../../assets/images/base_bg.png") repeat top/contain;
   width: 100%;
   perspective: 1000px;
   position: relative;
