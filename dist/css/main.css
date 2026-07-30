@@ -539,6 +539,12 @@ section {
   .timeline .content .title {
     font-size: 4.6125461255vw;
   }
+  .timeline .content .items .timeline-item {
+    font-size: 2.0295202952vw;
+  }
+  .timeline .content .items .timeline-item .icon img {
+    max-width: 6.4575645756vw;
+  }
 }
 
 .dresscode {

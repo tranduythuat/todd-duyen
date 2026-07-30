@@ -45,6 +45,18 @@
             .title {
                 font-size: calc((25 / 542) * 100vw);
             }
+
+            .items {
+                .timeline-item {
+                    font-size: calc((11 / 542) * 100vw);
+
+                    .icon {
+                        img {
+                            max-width: calc((35 / 542) * 100vw);
+                        }
+                    }
+                }
+            }
         }
     }
 }
