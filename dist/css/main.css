@@ -725,6 +725,7 @@ section {
 }
 .guides .content .guide.third .description .btn.option-2 span {
   font-style: italic;
+  font-weight: 600;
 }
 @media (max-width: 542px) {
   .guides .content .guide .description .title {
@@ -821,8 +822,20 @@ section {
 .video .content .divider img {
   max-width: 46px;
 }
-.video .content .video-oj img {
+.video .content .video-wrap {
   max-width: 424px;
+  aspect-ratio: 2/3;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+.video .content .video-wrap video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 @media (max-width: 542px) {
   .video .content .title {
@@ -831,7 +844,7 @@ section {
   .video .content .divider img {
     max-width: 8.4870848708vw;
   }
-  .video .content .video-oj img {
+  .video .content .video-wrap video {
     max-width: 78.2287822878vw;
   }
 }
@@ -1115,7 +1128,7 @@ section {
   border: solid 2px #686c73;
   line-height: 1;
   transition: border-color 0.3s ease;
-  color: #686c73;
+  color: rgb(78, 78, 78);
   background-color: transparent;
   font-size: 12px;
   font-family: "SVG-GothamLight", sans-serif;
@@ -1144,6 +1157,7 @@ section {
 }
 .rsvp .content .rsvp-form .form-group textarea::placeholder {
   white-space: pre-line;
+  line-height: 1.4;
   /* Cho phép hiển thị xuống dòng trong placeholder */
 }
 .rsvp .content .rsvp-form .form-group .subtitle {
@@ -1183,7 +1197,7 @@ section {
   color: white;
 }
 .rsvp .content .rsvp-form .form-group.name textarea, .rsvp .content .rsvp-form .form-group.guest-info textarea {
-  aspect-ratio: 9/1;
+  aspect-ratio: 9/1.2;
 }
 .rsvp .content .rsvp-form .form-group.guest-number {
   display: flex;

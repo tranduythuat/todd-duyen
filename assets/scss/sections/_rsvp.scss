@@ -140,7 +140,7 @@
                     border: solid 2px $text-color;
                     line-height: 1;
                     transition: border-color 0.3s ease;
-                    color: $text-color;
+                    color: rgb(78, 78, 78);
                     background-color: transparent;
                     font-size: 12px;
                     font-family: $font-SVG-GothamLight;
@@ -175,6 +175,7 @@
 
                 textarea::placeholder {
                     white-space: pre-line;
+                    line-height: 1.4;
                     /* Cho phép hiển thị xuống dòng trong placeholder */
                 }
 
@@ -224,7 +225,7 @@
                 &.name,
                 &.guest-info {
                     textarea {
-                        aspect-ratio: 9 / 1;
+                        aspect-ratio: 9 / 1.2;
                     }
                 }
 
