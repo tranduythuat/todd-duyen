@@ -515,6 +515,122 @@
        RSVP
     ====================================================== */
 
+  function clearRSVPValidationUI(form) {
+    form.querySelectorAll(".form-group").forEach((group) => {
+      group.classList.remove("is-invalid");
+      const messageEl = group.querySelector(".field-error-message");
+      if (messageEl) {
+        messageEl.textContent = "";
+      }
+    });
+  }
+
+  function renderRSVPValidationUI(form, validation) {
+    clearRSVPValidationUI(form);
+
+    validation.errors.forEach(({ field, message }) => {
+      const selectorMap = {
+        confirm: ".form-group.confirm",
+        name: ".form-group.name",
+        guest_info: ".form-group.guest-info",
+        related: ".form-group.related",
+        note: ".form-group.note",
+      };
+      const group = form.querySelector(selectorMap[field] || `.form-group.${field}`);
+      if (!group) return;
+
+      group.classList.add("is-invalid");
+      const messageEl = group.querySelector(".field-error-message");
+      if (messageEl) {
+        messageEl.textContent = message;
+      }
+    });
+  }
+
+  function bindRSVPFieldEvents(form) {
+    const clearFieldError = (target) => {
+      const group = target.closest(".form-group");
+      if (!group) return;
+
+      group.classList.remove("is-invalid");
+      const messageEl = group.querySelector(".field-error-message");
+      if (messageEl) {
+        messageEl.textContent = "";
+      }
+    };
+
+    form.addEventListener("input", (e) => {
+      const target = e.target;
+      if (target.matches("textarea, input[type='text'], input[type='number']")) {
+        clearFieldError(target);
+      }
+    });
+
+    form.addEventListener("change", (e) => {
+      if (e.target.matches('input[name="confirm"], input[name="related"]')) {
+        clearFieldError(e.target);
+      }
+    });
+  }
+
+  function validateRSVPForm(form, data, lang = "vi") {
+    const messages = {
+      vi: {
+        title: "Thiếu thông tin",
+        general: "Vui lòng điền đầy đủ thông tin bắt buộc trước khi gửi.",
+        missingSelection: "Vui lòng chọn một lựa chọn về việc tham dự.",
+        missingName: "Vui lòng nhập tên khách mời tham dự.",
+        missingGuestInfo: "Vui lòng cung cấp thông tin liên hệ.",
+        missingRelated: "Vui lòng cho biết có hạn chế hoặc dị ứng về ẩm thực hay không.",
+        missingNote: "Vui lòng ghi rõ thêm thông tin hoặc yêu cầu.",
+      },
+      en: {
+        title: "Missing information",
+        general: "Please complete all required fields before submitting.",
+        missingSelection: "Please select your availability.",
+        missingName: "Please enter the name of the attending guest.",
+        missingGuestInfo: "Please provide your contact information.",
+        missingRelated: "Please let us know whether you have any dietary restrictions or allergies.",
+        missingNote: "Please specify any additional notes or requests.",
+      },
+    };
+
+    const t = messages[lang] || messages.vi;
+    const errors = [];
+    const selectedConfirm = form.querySelector('input[name="confirm"]:checked');
+    const isCannotAttend = selectedConfirm?.id === "confirm-no";
+
+    if (!selectedConfirm) {
+      errors.push({ field: "confirm", message: t.missingSelection });
+    }
+
+    if (!String(data.name || "").trim()) {
+      errors.push({ field: "name", message: t.missingName });
+    }
+
+    if (!isCannotAttend) {
+      if (!String(data.guest_info || "").trim()) {
+        errors.push({ field: "guest_info", message: t.missingGuestInfo });
+      }
+
+      if (!String(data.related || "").trim()) {
+        errors.push({ field: "related", message: t.missingRelated });
+      }
+
+      if (!String(data.note || "").trim()) {
+        errors.push({ field: "note", message: t.missingNote });
+      }
+    }
+
+    return {
+      isValid: errors.length === 0,
+      message: errors.length
+        ? `${t.general}\n\n- ${errors.map((error) => error.message).join("\n- ")}`
+        : "",
+      errors,
+    };
+  }
+
   async function handleFormSubmit(e, lang = "vi") {
     e.preventDefault();
     const form = document.forms["rsvpForm"];
@@ -570,6 +686,19 @@
     };
 
     const t = messages[lang] || messages.vi;
+    const validation = validateRSVPForm(form, data, lang);
+    renderRSVPValidationUI(form, validation);
+
+    if (!validation.isValid) {
+      // Swal.fire({
+      //   title: t.validationTitle || "Thiếu thông tin",
+      //   text: validation.message,
+      //   icon: "warning",
+      //   confirmButtonText: "OK",
+      //   confirmButtonColor: "#3c7fc2",
+      // });
+      return;
+    }
 
     // =========================
     // Loading popup
@@ -618,6 +747,7 @@
       }
 
       form.reset();
+      clearRSVPValidationUI(form);
 
       Swal.fire({
         title: t.successTitle,
@@ -642,7 +772,8 @@
   function initRSVP() {
     const form = document.forms["rsvpForm"];
     if (form) {
-      form.addEventListener("submit", (e) => handleFormSubmit(e, "vi"));
+      bindRSVPFieldEvents(form);
+      form.addEventListener("submit", (e) => handleFormSubmit(e, "en"));
     }
   }
 

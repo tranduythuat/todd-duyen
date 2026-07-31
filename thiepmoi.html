@@ -99,7 +99,7 @@
     <!-- timeline -->
     <section class="timeline">
       <div class="content">
-        <div class="title" data-animate="fade-in">Timeline</div>
+        <div class="title">Timeline</div>
         <div class="items">
           <div class="item timeline-item">
             <div class="icon">
@@ -182,7 +182,7 @@
 
     <div class="guides">
       <div class="content">
-        <div class="guide first" data-animate="fade-down">
+        <div class="guide first">
           <div class="divider-area">
             <div class="icon">
               <img src="assets/images/divider_04.png" alt="" data-animate="flip-vertical-left" />
@@ -218,8 +218,8 @@
             <img src="assets/images/image_enclose_02.png" class="icon-02" alt="" data-animate="fade-in" />
           </div>
           <div class="description">
-            <div class="title">Flights & Arrival</div>
-            <div class="subtext">
+            <div class="title" data-animate="fade-right">Flights & Arrival</div>
+            <div class="subtext" data-animate="fade-in">
               <p>
                 Best Airports to Fly Into: Book a flight to Da Nang
                 International Airport (DAD), the main airport in Da Nang City.
@@ -236,18 +236,18 @@
                 not, you can apply for an eVisa online ahead of time.
               </p>
             </div>
-            <a target="_blank" href="https://evisa.gov.vn/" class="btn">Click here!</a>
+            <a target="_blank" href="https://evisa.gov.vn/" class="btn" data-animate="fade-in">Click here!</a>
           </div>
         </div>
-        <div class="guide third" data-animate="fade-up" data-animate-delay="0.3">
+        <div class="guide third">
           <div class="divider-area">
             <div class="icon">
-              <img src="assets/images/divider_05.png" alt="" />
+              <img src="assets/images/divider_05.png" data-animate="flip-vertical-left" alt="" />
             </div>
           </div>
           <div class="description">
-            <div class="title">Where to Stay</div>
-            <div class="subtext">
+            <div class="title" data-animate="fade-right">Where to Stay</div>
+            <div class="subtext" data-animate="fade-in">
               <p>
                 If you are also interested in staying at Palm Garden, we
                 highly recommend securing your accommodation early. As Palm
@@ -259,24 +259,24 @@
                 of the following options:
               </p>
             </div>
-            <a ta href="https://forms.gle/QGgKnooZbZBaNAkKA" class="btn option-1">
+            <a ta href="https://forms.gle/QGgKnooZbZBaNAkKA" class="btn option-1" data-animate="fade-right">
               Option 1 : View rates and submit your reservation form online
               (click here)
             </a>
-            <a href="#" class="btn option-2">
+            <a href="#" class="btn option-2" data-animate="fade-right">
               Option 2: Email your booking request directly to the resort at
               <br />
               <span class="">
                 info@pgr.com.vn (Subject line: Todd & Duyen Wedding)
               </span>
             </a>
-            <div class="subtext">
+            <div class="subtext" data-animate="fade-in">
               <p>
                 If you would like to search other nearby hotels or resorts,
                 click the link below
               </p>
             </div>
-            <a href="#" class="btn option-3">
+            <a href="#" class="btn option-3" data-animate="fade-right">
               Nearby hotels and resorts (click here)
             </a>
           </div>
@@ -285,28 +285,28 @@
     </div>
 
     <div class="contact">
-      <div class="content" data-animate="fade-up">
-        <div class="title">Contact info</div>
-        <div class="subtext">
+      <div class="content">
+        <div class="title" data-animate="fade-in">Contact info</div>
+        <div class="subtext" data-animate="fade-right">
           For wedding logistics and planning, please feel <br />
           free to contact our wedding planner Ý Như: <br />
           <span>ynhu@gonweddingplanner.com</span> <br />
           (GON Wedding Planner).
         </div>
-        <div class="note">She speaks Vietnamese and English.</div>
+        <div class="note" data-animate="fade-right">She speaks Vietnamese and English.</div>
       </div>
     </div>
 
     <div class="video">
-      <div class="content" data-animate="fade-up">
-        <div class="title">
+      <div class="content">
+        <div class="title" data-animate="fade-down">
           A celebration <br />
           by the sea
         </div>
         <div class="divider">
-          <img src="assets/images/divider_04.png" alt="" />
+          <img src="assets/images/divider_04.png" alt="" data-animate="flip-vertical-left" />
         </div>
-        <div class="video-wrap">
+        <div class="video-wrap" data-animate="fade-in">
           <video controls poster="assets/images/video.jpg" playsinline webkit-playsinline preload="metadata">
             <source src="https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/duyen-todd/video.mp4" type="video/mp4">
           </video>
@@ -315,7 +315,7 @@
     </div>
 
     <section class="album">
-      <div class="content" data-animate="fade-in">
+      <div class="content" data-animate="fade-down">
         <!-- <h2 class="titile" data-animate="fade-in">Album photo</h2> -->
         <div class="swiper main-swiper">
           <div class="swiper-wrapper">
@@ -411,7 +411,7 @@
             <i class="subtitle-vi">Qúy khách có thể tham dự vào ngày nào?</i>
             <div class="button-group confirm">
               <div class="radio-wrapper">
-                <input type="radio" id="confirm-27" name="confirm" value="Yes" />
+                <input type="radio" id="confirm-27" name="confirm" value="Yes" required />
                 <label for="confirm-27" class="radio-label">
                   December 27 only - <span>Chỉ ngày 27/12</span>
                 </label>
@@ -436,15 +436,18 @@
                 </label>
               </div>
             </div>
+            <div class="field-error-message" data-field="confirm"></div>
           </div>
 
           <div class="form-group name">
             <textarea id="name" name="name"
               placeholder="WHAT ARE THE NAME OF ALL ATTENDING GUESTS?&nbsp; · &nbsp;Tên khách mời tham dự"></textarea>
+            <div class="field-error-message" data-field="name"></div>
           </div>
           <div class="form-group guest-info">
             <textarea id="guest-info" name="guest_info"
               placeholder="PLEASE PROVIDE YOUR CONTACT INFORMATION.&nbsp; · &nbsp;Vui lòng cung cấp thông tin liên hệ."></textarea>
+            <div class="field-error-message" data-field="guest_info"></div>
           </div>
 
           <!-- <div class="form-group name" data-animate="fade-in-end">
@@ -491,22 +494,24 @@
             </i>
             <div class="button-group">
               <div class="radio-wrapper">
-                <input type="radio" id="related_1" name="related" value="Có" checked />
+                <input type="radio" id="related_1" name="related" value="Có" />
                 <label for="related_1" class="radio-label">
-                  YES &nbsp; · &nbsp; <span>Có</span>
+                  YES &nbsp; · &nbsp; <i>Có</i>
                 </label>
               </div>
               <div class="radio-wrapper">
                 <input type="radio" id="related_2" name="related" value="Không" />
                 <label for="related_2" class="radio-label">
-                  NO &nbsp; · &nbsp; <span>Không</span>
+                  NO &nbsp; · &nbsp; <i>Không</i>
                 </label>
               </div>
             </div>
+            <div class="field-error-message" data-field="related"></div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group note">
             <textarea id="note" name="note" placeholder="PLEASE SPECIFY &nbsp; · &nbsp; Vui lòng ghi rõ"></textarea>
+            <div class="field-error-message" data-field="note"></div>
           </div>
 
           <!-- <div class="form-group" data-animate="fade-in-end">

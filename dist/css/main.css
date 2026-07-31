@@ -1099,9 +1099,9 @@ section {
   color: #8c8c8c;
   font-size: 10.8px;
 }
-.rsvp .content .rsvp-form .button-group .radio-label span {
+.rsvp .content .rsvp-form .button-group .radio-label i {
   font-family: "SVG-GothamLight", sans-serif;
-  font-style: italic;
+  font-size: 12px;
 }
 .rsvp .content .rsvp-form .button-group .radio-label:hover {
   background: #686c73;
@@ -1166,6 +1166,27 @@ section {
   margin-bottom: 3%;
   font-family: "SVG-gotham-book", sans-serif;
   font-weight: 600;
+}
+.rsvp .content .rsvp-form .form-group .field-error-message {
+  display: none;
+  margin-top: 1%;
+  font-size: 12px;
+  color: #c94f4f;
+  font-family: "SVG-gotham-book", sans-serif;
+  line-height: 1.4;
+}
+.rsvp .content .rsvp-form .form-group.is-invalid textarea,
+.rsvp .content .rsvp-form .form-group.is-invalid input[type=text],
+.rsvp .content .rsvp-form .form-group.is-invalid input[type=number] {
+  border-color: #c94f4f;
+  box-shadow: 0 0 0 2px rgba(201, 79, 79, 0.15);
+}
+.rsvp .content .rsvp-form .form-group.is-invalid .radio-label {
+  border-color: #c94f4f;
+  box-shadow: 0 0 0 2px rgba(201, 79, 79, 0.15);
+}
+.rsvp .content .rsvp-form .form-group.is-invalid .field-error-message {
+  display: block;
 }
 .rsvp .content .rsvp-form .form-group i.subtitle-vi {
   display: block;
@@ -1261,6 +1282,9 @@ section {
     border-radius: 3.3210332103vw;
     font-size: 1.9926199262vw;
   }
+  .rsvp .content .rsvp-form .button-group .radio-label i {
+    font-size: 2.2140221402vw;
+  }
   .rsvp .content .rsvp-form .form-group {
     font-size: 1.8450184502vw;
   }
@@ -1278,6 +1302,9 @@ section {
   }
   .rsvp .content .rsvp-form .form-group .subtitle {
     font-size: 2.5830258303vw;
+  }
+  .rsvp .content .rsvp-form .form-group .field-error-message {
+    font-size: 2.2140221402vw;
   }
   .rsvp .content .rsvp-form .form-group i.subtitle-vi {
     font-size: 1.6974169742vw;

@@ -106,9 +106,9 @@
                     color: #8c8c8cff;
                     font-size: 10.8px;
 
-                    span {
+                    i {
                         font-family: $font-SVG-GothamLight;
-                        font-style: italic;
+                        font-size: 12px;
                     }
 
                     &:hover {
@@ -185,6 +185,35 @@
                     margin-bottom: 3%;
                     font-family: $font-SVG-gothamBook;
                     font-weight: 600;
+                }
+
+                .field-error-message {
+                    display: none;
+                    margin-top: 1%;
+                    font-size: 12px;
+                    color: #c94f4f;
+                    font-family: $font-SVG-gothamBook;
+                    line-height: 1.4;
+                }
+
+                &.is-invalid {
+
+                    textarea,
+                    input[type="text"],
+                    input[type="number"] {
+                        border-color: #c94f4f;
+                        box-shadow: 0 0 0 2px rgba(201, 79, 79, 0.15);
+                    }
+
+                    .radio-label {
+                        border-color: #c94f4f;
+                        box-shadow: 0 0 0 2px rgba(201, 79, 79, 0.15);
+                        // color: #c94f4f;
+                    }
+
+                    .field-error-message {
+                        display: block;
+                    }
                 }
 
                 i.subtitle-vi {
@@ -308,6 +337,10 @@
                     .radio-label {
                         border-radius: calc((18 / 542) * 100vw);
                         font-size: calc((10.8 / 542) * 100vw);
+
+                        i {
+                            font-size: calc((12 / 542) * 100vw);
+                        }
                     }
                 }
 
@@ -331,6 +364,10 @@
 
                     .subtitle {
                         font-size: calc((14 / 542) * 100vw);
+                    }
+
+                    .field-error-message {
+                        font-size: calc((12 / 542) * 100vw);
                     }
 
                     i.subtitle-vi {
