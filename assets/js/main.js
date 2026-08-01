@@ -570,6 +570,20 @@
       if (e.target.matches('input[name="confirm"], input[name="related"]')) {
         clearFieldError(e.target);
       }
+
+      if (e.target.matches('input[name="related"]')) {
+        const selectedValue = form.querySelector('input[name="related"]:checked')?.value?.trim().toLowerCase();
+        if (selectedValue === "no" || selectedValue === "không") {
+          const noteGroup = form.querySelector('.form-group.note');
+          if (noteGroup) {
+            noteGroup.classList.remove('is-invalid');
+            const messageEl = noteGroup.querySelector('.field-error-message');
+            if (messageEl) {
+              messageEl.textContent = '';
+            }
+          }
+        }
+      }
     });
   }
 
@@ -599,6 +613,8 @@
     const errors = [];
     const selectedConfirm = form.querySelector('input[name="confirm"]:checked');
     const isCannotAttend = selectedConfirm?.id === "confirm-no";
+    const relatedValue = String(data.related || "").trim().toLowerCase();
+    const isRelatedNo = relatedValue === "no" || relatedValue === "không";
 
     if (!selectedConfirm) {
       errors.push({ field: "confirm", message: t.missingSelection });
@@ -617,7 +633,7 @@
         errors.push({ field: "related", message: t.missingRelated });
       }
 
-      if (!String(data.note || "").trim()) {
+      if (!isRelatedNo && !String(data.note || "").trim()) {
         errors.push({ field: "note", message: t.missingNote });
       }
     }
@@ -652,11 +668,9 @@
     const {
       name,
       confirm,
-      guest_number,
-      vegetarian,
+      guest_info,
       related,
       note,
-      wish,
     } = data;
 
     // =========================
@@ -711,7 +725,7 @@
       didOpen: () => Swal.showLoading(),
     });
 
-    const sheetURL = "/exec?sheet=confirm";
+    const sheetURL = "https://script.google.com/macros/s/AKfycbytbT1Gn57HwsTL2RzcDSQba5S6lJQfltIenOSa1JKo1BmECskqnWzgXNVFnicpMEZcJA/exec/exec?sheet=confirm";
 
     try {
       const res = await fetch(sheetURL, {
@@ -720,11 +734,9 @@
         body: new URLSearchParams({
           name,
           confirm,
-          guest_number,
-          vegetarian,
-          related,
+          guest_info,
+          related: related ?? "",
           note,
-          wish,
         }),
       });
 
