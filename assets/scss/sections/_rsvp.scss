@@ -279,14 +279,14 @@
 
             .submit-btn {
                 width: 40%;
-                padding: 3% 2% 2%;
-                line-height: 1;
+                padding: 1% 2%;
+                line-height: 1.5;
                 background: $text-color;
                 color: white;
                 border: none;
                 border-radius: 14px;
                 font-weight: 600;
-                font-size: 10.8px;
+                font-size: 12px;
                 font-family: $font-SVG-GothamLight;
                 cursor: pointer;
                 text-transform: uppercase;
@@ -380,8 +380,12 @@
                 }
 
                 .submit-btn {
-                    font-size: calc((10.8 / 542) * 100vw);
-                    border-radius: calc((14 / 542) * 100vw)
+                    font-size: calc((12 / 542) * 100vw);
+                    border-radius: calc((14 / 542) * 100vw);
+
+                    span {
+                        font-size: calc((9.2 / 542) * 100vw);
+                    }
                 }
             }
         }

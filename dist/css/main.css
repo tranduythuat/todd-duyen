@@ -83,6 +83,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgb(255, 255, 255);
   font-size: 12px;
@@ -111,6 +115,7 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
+  scroll-margin-top: 100px;
 }
 
 .container {
@@ -1237,14 +1242,14 @@ section {
 }
 .rsvp .content .rsvp-form .submit-btn {
   width: 40%;
-  padding: 3% 2% 2%;
-  line-height: 1;
+  padding: 1% 2%;
+  line-height: 1.5;
   background: #686c73;
   color: white;
   border: none;
   border-radius: 14px;
   font-weight: 600;
-  font-size: 10.8px;
+  font-size: 12px;
   font-family: "SVG-GothamLight", sans-serif;
   cursor: pointer;
   text-transform: uppercase;
@@ -1311,8 +1316,11 @@ section {
     max-width: 15.1291512915vw;
   }
   .rsvp .content .rsvp-form .submit-btn {
-    font-size: 1.9926199262vw;
+    font-size: 2.2140221402vw;
     border-radius: 2.5830258303vw;
+  }
+  .rsvp .content .rsvp-form .submit-btn span {
+    font-size: 1.6974169742vw;
   }
 }
 
