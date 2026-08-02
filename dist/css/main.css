@@ -155,8 +155,9 @@ section {
   width: 100%;
   text-align: left;
   font-size: 12px;
-  background-color: #efc8c8;
-  padding: 4% 15%;
+  background-color: #8db6be;
+  color: #fff;
+  padding: 3% 12%;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   border: 1px solid rgba(48, 44, 42, 0.124);
@@ -512,7 +513,7 @@ section {
 .timeline .content {
   width: 100%;
   aspect-ratio: 542/966;
-  background: url("../../assets/images/timeline_bg.jpg") no-repeat center/cover;
+  background: url("../../assets/images/timeline_bg.png") no-repeat center/cover;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -674,6 +675,7 @@ section {
 }
 .guides .content .guide.first .description .btn {
   margin-top: 2%;
+  font-family: "SVG-GothamBold", sans-serif;
 }
 .guides .content .guide.second .divider-area {
   position: relative;
@@ -704,6 +706,7 @@ section {
 }
 .guides .content .guide.second .description .btn {
   margin-top: 2%;
+  font-family: "SVG-GothamBold", sans-serif;
 }
 .guides .content .guide.third .divider-area {
   display: flex;
@@ -725,12 +728,18 @@ section {
 .guides .content .guide.third .description .btn.option-1 {
   margin: 15% 0 6%;
 }
+.guides .content .guide.third .description .btn.option-1 span {
+  font-family: "SVG-GothamBold", sans-serif;
+}
 .guides .content .guide.third .description .btn.option-2 {
   margin-bottom: 15%;
 }
 .guides .content .guide.third .description .btn.option-2 span {
   font-style: italic;
   font-weight: 600;
+}
+.guides .content .guide.third .description .btn.option-3 span {
+  font-family: "SVG-GothamBold", sans-serif;
 }
 @media (max-width: 542px) {
   .guides .content .guide .description .title {
@@ -1018,7 +1027,7 @@ section {
   width: 100%;
   perspective: 1000px;
   position: relative;
-  padding: 12% 8% 0%;
+  padding: 12% 7% 0%;
 }
 .rsvp .content .header {
   padding: 5% 0;
