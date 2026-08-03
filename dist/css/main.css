@@ -513,7 +513,7 @@ section {
 .timeline .content {
   width: 100%;
   aspect-ratio: 542/966;
-  background: url("../../assets/images/timeline_bg.png") no-repeat center/cover;
+  background: url("../../assets/images/nen-01.png") no-repeat center/80%, url("../../assets/images/timeline_bg.png") no-repeat center/cover;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -533,7 +533,7 @@ section {
 .timeline .content .items .timeline-item {
   font-size: 11px;
   text-align: center;
-  margin-bottom: 10%;
+  margin-bottom: 15%;
 }
 .timeline .content .items .timeline-item .icon {
   margin-bottom: 2%;
