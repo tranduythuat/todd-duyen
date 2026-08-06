@@ -7,7 +7,7 @@
 
     .content {
         width: 100%;
-        aspect-ratio: 542 / 817;
+        aspect-ratio: 542 / 1000;
         background: url('../../assets/images/hero_bg.jpg') no-repeat center / cover;
         @include flex-center;
 
@@ -75,6 +75,36 @@
                 transform: translateX(-50%);
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
                     0 10px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+
+        @media (max-width: 542px) {
+            .letter {
+                max-width: calc((384 / 542) * 100vw);
+
+                .flap {
+                    .text-block {
+                        .invitation {
+                            font-size: calc((25 / 542) * 100vw);
+                        }
+
+                        .join-us {
+                            font-size: calc((11.5 / 542) * 100vw);
+                        }
+
+                        .couple-name {
+                            font-size: calc((28 / 542) * 100vw);
+                        }
+                    }
+                }
+
+                .hand-click {
+                    width: calc((60 / 542) * 100vw);
+                }
+
+                .empty-page {
+                    max-width: calc((304 / 542) * 100vw);
+                }
             }
         }
 

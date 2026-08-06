@@ -318,7 +318,7 @@ section {
 }
 .letter-section .content {
   width: 100%;
-  aspect-ratio: 542/817;
+  aspect-ratio: 542/1000;
   background: url("../../assets/images/hero_bg.jpg") no-repeat center/cover;
   display: flex;
   justify-content: center;
@@ -381,6 +381,26 @@ section {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media (max-width: 542px) {
+  .letter-section .content .letter {
+    max-width: 70.8487084871vw;
+  }
+  .letter-section .content .letter .flap .text-block .invitation {
+    font-size: 4.6125461255vw;
+  }
+  .letter-section .content .letter .flap .text-block .join-us {
+    font-size: 2.1217712177vw;
+  }
+  .letter-section .content .letter .flap .text-block .couple-name {
+    font-size: 5.1660516605vw;
+  }
+  .letter-section .content .letter .hand-click {
+    width: 11.0701107011vw;
+  }
+  .letter-section .content .letter .empty-page {
+    max-width: 56.0885608856vw;
+  }
 }
 
 .hero {
