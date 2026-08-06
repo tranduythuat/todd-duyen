@@ -123,21 +123,12 @@
       })
       .set(".letter-section", { display: "none" })
       .set(".container .content", { opacity: 0 })
-      .set(".container", { display: "block" })
+      .set(".container", { display: "block", opacity: 1 })
+
       .to(".container .content", {
         opacity: 1,
         onComplete: () => {
-
-          // 💥 Reset ScrollTrigger
-          // ScrollTrigger.refresh();
-
-          // 💥 Nếu cần reset toàn bộ animation
-          // gsap.globalTimeline.clear();
-
-          // 💥 Re-init animation cho container
           initAnimations();
-          // initDresscodeAnimation();
-          // initTimeline();
           ScrollTrigger.refresh();
         }
       });
@@ -162,9 +153,6 @@
     const joinUs = section.querySelector(".join-us");
     const coupleName = section.querySelector(".couple-name");
     const handClick = section.querySelector(".hand-click");
-    // const ampersand = section.querySelector(".ampersand");
-    // const wife = section.querySelector(".wife");
-    // const divider = section.querySelector(".divider-img");
 
     const tl = gsap.timeline({
       scrollTrigger: {

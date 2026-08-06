@@ -128,6 +128,8 @@ section {
   color: #686c73;
   font-family: "Lora", sans-serif;
   font-size: 11px;
+  display: none;
+  opacity: 0;
 }
 
 /* music */
