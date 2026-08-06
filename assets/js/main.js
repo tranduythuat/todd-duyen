@@ -137,7 +137,7 @@
       .to(".letter-section", {
         opacity: 0,
         duration: 0.8
-      })
+      }, "+=0.5")
       .set(".letter-section", { display: "none" })
       .set(".container .content", { opacity: 0 })
       .set(".container", { display: "block", opacity: 1 })

@@ -372,10 +372,11 @@ section {
   animation: hand-click 1.5s infinite;
 }
 .letter-section .content .letter .empty-page {
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/duyen-todd/fbe0d88ade155f4b0604.webp") no-repeat center/100%;
   opacity: 0;
   position: absolute;
   width: 100%;
-  max-width: 304px;
+  max-width: 375px;
   aspect-ratio: 384/250;
   background-color: #fefcfa;
   bottom: 0;
@@ -400,7 +401,7 @@ section {
     width: 11.0701107011vw;
   }
   .letter-section .content .letter .empty-page {
-    max-width: 56.0885608856vw;
+    max-width: 69.1881918819vw;
   }
 }
 
