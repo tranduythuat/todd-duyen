@@ -325,7 +325,7 @@ section {
   align-items: center;
 }
 .letter-section .content .letter {
-  max-width: 384px;
+  max-width: 434px;
   width: 100%;
   aspect-ratio: 384/293;
   background: url("../../assets/images/letter_underside.png") no-repeat center/103%;

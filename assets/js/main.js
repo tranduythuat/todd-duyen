@@ -101,6 +101,22 @@
   function initPage() {
     const tl = gsap.timeline({ paused: true });
     const audio = document.querySelector("#audio");
+    const openCard = document.getElementById("open-card");
+    const params = new URLSearchParams(window.location.search);
+    const isCardOpened = params.get("opened") === "1";
+
+    function markCardOpened() {
+      const url = new URL(window.location.href);
+      url.searchParams.set("opened", 1);
+      window.history.replaceState({}, "", url);
+    }
+
+    if (isCardOpened) {
+      gsap.set(".letter-section", { display: "none", opacity: 0 });
+      gsap.set(".container", { display: "block", opacity: 1 });
+      ScrollTrigger.refresh();
+      return;
+    }
 
     tl.fromTo(
       ".flap",
@@ -133,7 +149,11 @@
         }
       });
 
-    document.getElementById("open-card").addEventListener("click", (e) => {
+    if (!openCard) return;
+
+    openCard.addEventListener("click", (e) => {
+      markCardOpened();
+
       if (audio && audio.paused) {
         audio.play().catch(err => {
           console.log("Autoplay blocked:", err);
