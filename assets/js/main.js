@@ -48,6 +48,7 @@
     let isOpen = true
 
     if (!audio || !icon || !btn || !label) return;
+    audio.volume = 0.5
 
     // 👉 GSAP timeline cho label
     const tl = gsap.timeline({ paused: true });
@@ -155,6 +156,7 @@
       markCardOpened();
 
       if (audio && audio.paused) {
+        audio.volume = 0.5
         audio.play().catch(err => {
           console.log("Autoplay blocked:", err);
         });

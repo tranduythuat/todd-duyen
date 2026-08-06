@@ -331,7 +331,8 @@ section {
   background: url("../../assets/images/letter_underside.png") no-repeat center/103%;
   perspective: 1000px;
   position: relative;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .letter-section .content .letter .flap {
   width: 100%;
