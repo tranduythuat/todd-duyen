@@ -102,14 +102,29 @@
     const tl = gsap.timeline({ paused: true });
     const audio = document.querySelector("#audio");
 
-    tl.to(".letter-section", {
-      opacity: 0,
-      duration: 0.8
-    })
+    tl.fromTo(
+      ".flap",
+      {
+        rotateX: 0,
+        transformOrigin: "top center"
+      },
+      {
+        rotateX: 180,
+        duration: 1.5,
+        ease: "power2.inOut",
+      }
+    )
+      .to(".text-block", { opacity: "0" }, "-=1")
+      .to(".empty-page", { opacity: "1", y: -120, duration: 0.8 }, "-=0.7")
+      .set(".hand-click", { display: "none" }, "-=1")
+      .to(".letter-section", {
+        opacity: 0,
+        duration: 0.8
+      })
       .set(".letter-section", { display: "none" })
       .set(".container .content", { opacity: 0 })
       .set(".container", { display: "block" })
-      .to(".container", {
+      .to(".container .content", {
         opacity: 1,
         onComplete: () => {
 
@@ -142,11 +157,14 @@
     if (!section) return;
 
     const content = section.querySelector(".content");
-    const logo = section.querySelector(".logo-img");
-    const husband = section.querySelector(".husband");
-    const ampersand = section.querySelector(".ampersand");
-    const wife = section.querySelector(".wife");
-    const divider = section.querySelector(".divider-img");
+    const letter = section.querySelector(".letter");
+    const invitation = section.querySelector(".invitation");
+    const joinUs = section.querySelector(".join-us");
+    const coupleName = section.querySelector(".couple-name");
+    const handClick = section.querySelector(".hand-click");
+    // const ampersand = section.querySelector(".ampersand");
+    // const wife = section.querySelector(".wife");
+    // const divider = section.querySelector(".divider-img");
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -173,14 +191,26 @@
         clearProps: "filter"
       }
     );
+    tl.fromTo(
+      letter,
+      { opacity: 0, y: 50, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "filter"
+      },
+      "-=1"
+    );
 
     tl.from(
-      logo,
+      invitation,
       {
-        rotateY: -180,
-        scale: 0.8,
+        x: -120,
         opacity: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "back.out(1.2)",
         transformOrigin: "center center"
       },
@@ -188,7 +218,7 @@
     );
 
     tl.fromTo(
-      husband,
+      joinUs,
       { opacity: 0, x: -30 },
       {
         opacity: 1,
@@ -200,7 +230,7 @@
     );
 
     tl.fromTo(
-      ampersand,
+      coupleName,
       { opacity: 0, y: 50, filter: "blur(10px)" },
       {
         opacity: 1,
@@ -213,78 +243,105 @@
       "-=1"
     );
 
-    tl.fromTo(
-      wife,
-      { opacity: 0, x: 30 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-      },
-      "-=1"
-    );
+    if (handClick) {
+      tl.fromTo(
+        handClick,
+        { opacity: 0, scale: 0.5, y: -10 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1,
+          ease: "back.out(1.7)",
+          onComplete: () => {
+            // Sau khi xuất hiện xong thì bắt đầu nhấp nhô liên tục
+            gsap.to(handClick, {
+              scale: "+=0.1",
+              duration: 0.8,
+              ease: "power1.inOut",
+              repeat: -1,
+              yoyo: true
+            });
+          }
+        },
+        "-=0.3"
+      );
+    }
 
-    tl.fromTo(
-      divider,
-      {
-        rotation: -120,
-        scale: 0,
-        opacity: 0
-      },
-      {
-        rotation: 0,
-        scale: 1,
-        opacity: 1,
-        duration: 1.2,
-        ease: "back.out(1.6)",
-        transformOrigin: "50% 50%"
-      },
-      "-=0.4"
-    );
+    // tl.fromTo(
+    //   wife,
+    //   { opacity: 0, x: 30 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power2.out",
+    //   },
+    //   "-=1"
+    // );
 
-    tl.fromTo(
-      ".welcome",
-      { opacity: 0, y: 50, filter: "blur(10px)" },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power2.out",
-        clearProps: "filter"
-      },
-      "-=0.8"
-    );
+    // tl.fromTo(
+    //   divider,
+    //   {
+    //     rotation: -120,
+    //     scale: 0,
+    //     opacity: 0
+    //   },
+    //   {
+    //     rotation: 0,
+    //     scale: 1,
+    //     opacity: 1,
+    //     duration: 1.2,
+    //     ease: "back.out(1.6)",
+    //     transformOrigin: "50% 50%"
+    //   },
+    //   "-=0.4"
+    // );
+
+    // tl.fromTo(
+    //   ".welcome",
+    //   { opacity: 0, y: 50, filter: "blur(10px)" },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     filter: "blur(0px)",
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     clearProps: "filter"
+    //   },
+    //   "-=0.8"
+    // );
 
 
-    tl.fromTo(
-      ".subtext",
-      { opacity: 0, y: 50, filter: "blur(10px)" },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power2.out",
-        clearProps: "filter"
-      },
-      "-=0.8"
-    );
+    // tl.fromTo(
+    //   ".subtext",
+    //   { opacity: 0, y: 50, filter: "blur(10px)" },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     filter: "blur(0px)",
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     clearProps: "filter"
+    //   },
+    //   "-=0.8"
+    // );
 
-    tl.fromTo(
-      ".open-card",
-      { opacity: 0, y: 50, filter: "blur(10px)" },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power2.out",
-        clearProps: "filter"
-      },
-      "-=0.8"
-    );
+
+
+    // tl.fromTo(
+    //   ".open-card",
+    //   { opacity: 0, y: 50, filter: "blur(10px)" },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     filter: "blur(0px)",
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     clearProps: "filter"
+    //   },
+    //   "-=0.8"
+    // );
     // tl.from(date, { y: 100, opacity: 0 }, "-=0.4");
   }
 
@@ -842,8 +899,8 @@
 
   function init() {
     gsap.registerPlugin(ScrollTrigger);
-    // initPage();
-    // initLetterAnimation();
+    initPage();
+    initLetterAnimation();
     initAnimations();
     initSwiper();
     initMusic();
